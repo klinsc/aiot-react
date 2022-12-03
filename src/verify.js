@@ -69,8 +69,7 @@ export class Verify extends Component {
 
   // get beacon status from server
   async componentDidMount() {
-    const response = await axios.get("http://localhost:5000/status");
-    console.log(response.data.status);
+    const response = await axios.get("http://localhost:5000/status?table=beacon");
     this.setState({
       status: response.data.status,
     });
